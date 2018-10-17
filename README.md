@@ -1,0 +1,1 @@
+# component mvp Generamba template
