@@ -1,0 +1,26 @@
+# Template information section
+name: "component_mvp"
+summary: "Swift MVP component module template with UIViewController playing as a View."
+author: "Max Petrenko"
+version: "0.1.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+# Protocols
+- {name: Protocols/ViewType.swift, path: Code/Protocols/view_type.swift.liquid}
+- {name: Protocols/PresenterType.swift, path: Code/Protocols/presenter_type.swift.liquid}
+
+# View layer
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# Presenter layer
+- {name: Presenter.swift, path: Code/presenter.swift.liquid}
+- {name: Assembly.swift, path: Code/assembly.swift.liquid}
+
+# The declarations for test files
+test_files:
+
+# Presenter tests
+- {name: PresenterTests.swift, path: Tests/presenter_tests.swift.liquid}
