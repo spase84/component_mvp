@@ -9,6 +9,8 @@ license: "MIT"
 
 code_files:
 # Protocols
+- {name: Protocols/Input.swift, path: Code/Protocols/component_input.swift.liquid}
+- {name: Protocols/Output.swift, path: Code/Protocols/component_output.swift.liquid}
 - {name: Protocols/ViewType.swift, path: Code/Protocols/view_type.swift.liquid}
 - {name: Protocols/PresenterType.swift, path: Code/Protocols/presenter_type.swift.liquid}
 

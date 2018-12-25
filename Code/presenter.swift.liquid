@@ -8,6 +8,7 @@
 
 public class {{ module_info.name }}Presenter {
   weak var view: {{ module_info.name }}ViewType?
+	weak var output: {{ module_info.name }}Output?
 
 	public func attach(view: {{ module_info.name }}ViewType) {
 		self.view = view
@@ -15,5 +16,7 @@ public class {{ module_info.name }}Presenter {
 }
 
 extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterType { 
-	public func viewIsReady() {}
+	public func viewIsReady() {
+
+	}
 }
