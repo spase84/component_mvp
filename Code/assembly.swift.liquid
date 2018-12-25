@@ -10,18 +10,15 @@ import Swinject
 
 class {{ module_info.name }}Assembly: Assembly {
 	func assemble(container: Container) {
-		// register view
 		container.register({{ module_info.name}}ViewType.self) { _ in 
 			{{ module_info.name }}ViewController()
 		}.initCompleted { (resolver: Resolver, view: {{ module_info.name }}ViewType) in
-			// set dependencies
 			if let presenter = resolver.resolve({{ module_info.name }}PresenterType.self) as? {{ module_info.name }}Presenter {
 				presenter.attach(view: view)
 				view.set(presenter: presenter)
 			}
 		}
 		
-		// register presenter
 		container.register({{ module_info.name }}PresenterType.self) { _ in
 			{{ module_info.name }}Presenter()
 		}
