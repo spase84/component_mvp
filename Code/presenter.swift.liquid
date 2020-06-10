@@ -6,17 +6,15 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-public class {{ module_info.name }}Presenter {
-  weak var view: {{ module_info.name }}ViewType?
+class {{ module_info.name }}Presenter: {{ module_info.name }}PresenterType  {
+	weak var view: {{ module_info.name }}ViewType?
 	weak var output: {{ module_info.name }}Output?
 
-	public func attach(view: {{ module_info.name }}ViewType) {
+	init(view: {{ module_info.name }}ViewType) {
 		self.view = view
 	}
 }
 
 extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterType { 
-	public func viewIsReady() {
-
-	}
+	func viewIsReady() {}
 }

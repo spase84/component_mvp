@@ -13,14 +13,13 @@ class {{ module_info.name }}Assembly: Assembly {
 		container.register({{ module_info.name}}ViewType.self) { _ in 
 			{{ module_info.name }}ViewController()
 		}.initCompleted { (resolver: Resolver, view: {{ module_info.name }}ViewType) in
-			if let presenter = resolver.resolve({{ module_info.name }}PresenterType.self) as? {{ module_info.name }}Presenter {
-				presenter.attach(view: view)
+			if let presenter = resolver.resolve({{ module_info.name }}PresenterType.self, argument: view) as? {{ module_info.name }}Presenter {
 				view.set(presenter: presenter)
 			}
 		}
 		
-		container.register({{ module_info.name }}PresenterType.self) { _ in
-			{{ module_info.name }}Presenter()
+		container.register({{ module_info.name }}PresenterType.self) { (_, view: {{ module_info.name }}ViewType) in
+			{{ module_info.name }}Presenter(view: view)
 		}
 	}
 }

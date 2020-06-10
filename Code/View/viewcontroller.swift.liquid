@@ -8,19 +8,17 @@
 
 import UIKit
 
-public class {{ module_info.name }}ViewController: BaseViewController {
-  var presenter: {{ module_info.name }}PresenterType?
+class {{ module_info.name }}ViewController: BaseViewController {
+	var presenter: {{ module_info.name }}PresenterType?
 
-  public func set(presenter: {{ module_info.name }}PresenterType) {
-  	self.presenter = presenter
-  }
+	public func set(presenter: {{ module_info.name }}PresenterType) {
+		self.presenter = presenter
+	}
 
-  public override func viewDidLoad() {
-  	super.viewDidLoad()
-    presenter?.viewIsReady()
-  }
+	public override func viewDidLoad() {
+		super.viewDidLoad()
+		presenter?.viewIsReady()
+	}
 }
 
-extension {{ module_info.name }}ViewController: {{module_info.name}}ViewType { 
-
-}
+extension {{ module_info.name }}ViewController: {{module_info.name}}ViewType {}
